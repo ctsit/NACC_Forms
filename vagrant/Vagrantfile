@@ -1,0 +1,46 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # config.vm.box = "puphpet/debian75-x64"
+  # config.vm.box = "debian/jessie64"
+
+  # If you want to use the "Official Ubuntu 14.04 daily Cloud Image amd64 (Development release, No Guest Additions)"
+  # please execute
+  # $ vagrant box add ubuntu/trusty64 https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
+  # trying to fix slow box updates, tryimg lts version
+  # vagrant box add ubuntu/trusty64cpb https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box
+
+  config.vm.box = "ubuntu/trusty64cpb"
+  config.vm.box_url = "https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box"
+
+  # If you want to use the "Official Ubuntu 14.10 daily Cloud Image amd64 (Development release, No Guest Additions)"
+  # please execute
+  #     $ vagrant box add ubuntu/utopic64 https://cloud-images.ubuntu.com/vagrant/utopic/current/utopic-server-cloudimg-amd64-vagrant-disk1.box
+  # and uncomment the next line
+  # config.vm.box = "ubuntu/utopic64"
+
+  #config.vm.hostname = "hcvforms"
+  config.vm.hostname = "ADRC-SC"
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  config.vm.provision "shell" do |s|
+    s.path = "bootstrap.sh"
+    s.args = ["redcap6.0.5.zip"]
+  end
+
+  # We need files outside the vagrant file so we share them
+  #config.vm.synced_folder "../","/hcv_forms"
+
+  #config.vm.provision "create_project", type: "shell" do |s|
+  #  s.inline = "pushd /hcv_forms/scripts/longitudinal && make deploy_auto && popd"
+  #end
+
+  config.trigger.after [:provision, :up, :reload] do
+    system("open -a 'Google Chrome.app' http://localhost:8080/redcap/redcap_v6.0.5/Design/designate_forms.php?pid=12")
+  end
+
+end
