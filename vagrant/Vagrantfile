@@ -29,7 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "shell" do |s|
     s.path = "bootstrap.sh"
-    s.args = ["redcap6.0.5.zip"]
+    s.args = ["redcap6.16.0.zip"]
   end
 
   # We need files outside the vagrant file so we share them
@@ -40,7 +40,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #end
 
   config.trigger.after [:provision, :up, :reload] do
-    system("open -a 'Google Chrome.app' http://localhost:8080/redcap/redcap_v6.0.5/Design/designate_forms.php?pid=12")
+    system("open -a 'Google Chrome.app' http://localhost:8080/redcap/redcap_v6.16.0/Design/designate_forms.php?pid=12")
   end
 
 end
