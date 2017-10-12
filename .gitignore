@@ -4,6 +4,7 @@
 *.bk
 *.swp
 *.tmp
+vagrant/.vagrant/
 
 # Compiled source #
 ###################
