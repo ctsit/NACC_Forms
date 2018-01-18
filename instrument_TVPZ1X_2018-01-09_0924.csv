@@ -1,0 +1,44 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+instructions_z11_tvp,tvp_z1x,,descriptive,"<i>INSTRUCTIONS: This form is to be completed by clinic staff.</i> 
+Link to  <a href=""http://www.alz.washington.edu/NONMEMBER/UDS/DOCS/VER3/UDS3_fvp_guidebook.pdf""target=""_blank""> NACC Coding Guidebook</a> 
+
+ACC expects and intends that all UDS forms will be attempted on all subjects, but we realize this may be impossible when the patient is terminally ill, or when there is no co-participant, or for other reasons. However, for a subject to be included in the UDS database, <b>Forms Z1, A1, B4, B8, B9, C1/C2, D1, and D2</b> must be submitted, even though these forms may include some items with missing data. An explanation is required below for forms that are not submitted.
+
+KEY: If the specified form was not completed, please enter one of the following codes: 
+
+95 = Physical problem
+96 = Cognitive/behavior problem
+97 = Other problm
+98 = Verbal refusal",,,,,,,,,,,,,
+t_t1lang,tvp_z1x,"T1 - Inclusion Form (Required)",radio,"T1 Language","1, 1 English | 2, 2 Spanish",,,,,,,y,,,,,
+t_a1lang,tvp_z1x,"A1 - Subject Demographics (Required)",radio,"A1 Language","1, 1 English | 2, 2 Spanish",,,,,,,y,,,,,
+t_a2lang,tvp_z1x,"A2 - Co-participant Demographics",radio,"A2  Language","1, 1 English | 2, 2 Spanish",,,,,,,y,,,,,
+t_a2sub,tvp_z1x,,radio,"A2 Submitted?","1, 1 Yes | 0, 0 No",,,,,,,y,,,,,
+t_a2not,tvp_z1x,,radio,"If not submitted specify reason (see Key)","95, 95 - Physical problem | 96, 96 - Cognitive/behavior problem | 97, 97 - Other problem | 98, 98 - Verbal refusal",,,,,,"[t_a2sub] = '0'",y,,,,,
+t_a2comm,tvp_z1x,,text,"Comments (provide if form not included)",,,,,,,"[fu_a2sub_tvp] = '0'",,,,,,
+t_a3lang,tvp_z1x,"A3 - Subject Family History",radio,"A3 Language","1, 1 English | 2, 2 Spanish",,,,,,,y,,,,,
+t_a3sub,tvp_z1x,,radio,"A3 Submitted?","1, 1 Yes | 0, 0 No",,,,,,,y,,,,,
+t_a3not,tvp_z1x,,radio,"If not submitted specify reason (see Key)","95, 95 - Physical problem | 96, 96 - Cognitive/behavior problem | 97, 97 - Other problem | 98, 98 - Verbal refusal",,,,,,"[t_a3sub] = '0'",y,,,,,
+t_a3comm,tvp_z1x,,text,"Comments (provide if form not included)",,,,,,,"[t_a3sub] = '0'",,,,,,
+t_a4lang,tvp_z1x,"A4 - Subject Medications",radio,"A4 Language","1, 1 English | 2, 2 Spanish",,,,,,,y,,,,,
+t_a4sub,tvp_z1x,,radio,"A4 Submitted?","1, Yes | 0, No",,,,,,,y,,,,,
+t_a4not,tvp_z1x,,radio,"If not submitted specify reason (see Key)","95, 95 - Physical problem | 96, 96 - Cognitive/behavior problem | 97, 97 - Other problem | 98, 98 - Verbal refusal",,,,,,"[fu_a4sub_tvp] = '0'",y,,,,,
+t_a4comm,tvp_z1x,,text,"Comments (provide if form not included)",,,,,,,"[t_a4sub] = '0'",,,,,,
+t_b4lang,tvp_z1x,"B4 - Global Staging - CDR: Standard and Supplemental (Required)",radio,"B4 Language","1, 1 English | 2, 2 Spanish",,,,,,,y,,,,,
+t_b5lang,tvp_z1x,"B5 - BEHAVIORAL ASSESSMENT NPI-Q",radio,"B5 Language","1, 1 English | 2, 2 Spanish",,,,,,,y,,,,,
+t_b5sub,tvp_z1x,,radio,"B5 Submitted?","1, 1 Yes | 0, 0 No",,,,,,,y,,,,,
+t_b5not,tvp_z1x,,radio,"If not submitted specify reason (see Key)","95, 95 - Physical problem | 96, 96 - Cognitive/behavior problem | 97, 97 - Other problem | 98, 98 - Verbal refusal",,,,,,"[t_b5sub] = '0'",y,,,,,
+t_b5comm,tvp_z1x,,text,"Comments (provide if form not included)",,,,,,,"[t_b5sub] = '0'",,,,,,
+t_b7lang,tvp_z1x,"B7 - Functional Assessment NACC FAS",radio,"B7 Language","1, 1 English | 2, 2 Spanish",,,,,,,y,,,,,
+t_b7sub,tvp_z1x,,radio,"B7 Submitted?","1, 1 Yes | 0, 0 No",,,,,,,y,,,,,
+t_b7not,tvp_z1x,,radio,"If not submitted specify reason (see Key)","95, 95 - Physical problem | 96, 96 - Cognitive/behavior problem | 97, 97 - Other problem | 98, 98 - Verbal refusal",,,,,,"[t_b7sub] = '0'",y,,,,,
+t_b7comm,tvp_z1x,,text,"Comments (provide if form not included)",,,,,,,"[t_b7sub] = '0'",,,,,,
+t_b9lang,tvp_z1x,"B9 - Clinician Judgement of Symptoms (Required)",radio,"B9 Language","1, 1 English | 2, 2 Spanish",,,,,,,y,,,,,
+t_d1lang,tvp_z1x,"D1 - Clinician Diagnosis (Required)",radio,"D1 Language","1, 1 English | 2, 2 Spanish",,,,,,,y,,,,,
+t_d2lang,tvp_z1x,"D2 - Clinician-assessed Medical Conditions (Required)",radio,"D2 Language","1, 1 English | 2, 2 Spanish",,,,,,,y,,,,,
+t_clslang,tvp_z1x,"CLS FORM",radio,"CLS Language","1, 1 English | 2, 2 Spanish",,,,,,,y,,,,,
+t_clssub,tvp_z1x,,radio,"CLS Submitted?","1, 1 Yes | 0, 0 No","(Submit only once)",,,,,,y,,,,,
+t_copyright,tvp_z1x,,descriptive,"<font color=blue> Adapted with permission. Copyright &#169 2006, 2008, 2015, 2017 University of Washington. Created and published by the ADC Clinical Task Force (John C. Morris, MD, Chair) and the National Alzheimer's Coordinating Center (U01 AG016976 - Walter A. Kukull, PhD, Director).  All rights reserved.</font color=blue>",,,,,,,,,,,,,
+t_footer,tvp_z1x,,descriptive,"National Alzheimer's Coordinating Center | (206) 543-8637 | fax: (206) 616-5927 | naccmail@uw.edu | www.alz.washington.edu 
+
+<b>UDS (V3.0, March 2015) Telephone Visit Packet<font color=red>Form Z1X: Form Checklist</font color=red> </b>",,,,,,,,,,,,,
