@@ -1,0 +1,5 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+record_id,neuopsychological_dx,,text,"Record ID",,,,,,,,,,,,,
+neurdx,neuopsychological_dx,,radio,"Neuropsychological Dx: (pick one) ","1, Normal | 2, AmMCI | 3, AmMCI + | 4, Non-AmMCI 1D | 5, Non-AmMCI >1D | 6, Dementia | 7, Other",,,,,,,y,,,,,
+domains,neuopsychological_dx,,checkbox,"If other, specify all domains that apply:","1, Memory | 2, Attention | 3, Executive | 4, Visuospatial | 5, Language",,,,,,"[neurdx] = '7'",,,,,,
+algdiatable,neuopsychological_dx,,descriptive,"<u>Algorithmic Diagnosis Table</u>",,,,,,,,,,,,,
